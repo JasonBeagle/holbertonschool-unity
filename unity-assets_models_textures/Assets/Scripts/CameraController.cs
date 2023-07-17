@@ -1,39 +1,27 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject player; // The player GameObject
-    public float sensitivity = 100.0f; // Mouse sensitivity
-    public Vector3 offset; // Offset from the player
+    private Vector3 offset;
+    private GameObject player;
+    public float turnSpeed = 4.0f;
 
-    private float xRotation = 0.0f; // To keep track of vertical rotation
-
+    // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked; // Hide and lock the cursor
-        transform.LookAt(player.transform.position); // Make the camera look at the player
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
+        player = GameObject.Find("Player");
+        offset = transform.position - player.transform.position;
     }
 
+    // Update is called once per frame
     void LateUpdate()
     {
-        // Camera follows the player
+        offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * turnSpeed, Vector3.left) * offset;
         transform.position = player.transform.position + offset;
-
-        // Get mouse input
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
-
-        // Invert and accumulate vertical rotation
-        xRotation -= mouseY;
-        // Clamp the vertical rotation between -90 and 90 degrees
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-        // Apply rotation
-        transform.localRotation = Quaternion.Euler(xRotation + 30, 0f, 0f);
-
-        // Rotate the player horizontally
-        player.transform.Rotate(Vector3.up * mouseX);
+        transform.LookAt(player.transform.position);
     }
 }

@@ -9,12 +9,6 @@ public class Timer : MonoBehaviour
     public bool started;
 
 
-    //void Start()
-    //{
-        // Initially we don't start the timer
-        //started = false;
-    //}
-
     void Update()
     {
         if (started)
@@ -32,5 +26,11 @@ public class Timer : MonoBehaviour
     {
         startTime = Time.time;
         started = true;
+    }
+
+    public void ResetTimer()
+    {
+        TimerText.text = "0:00.00";
+        started = false;
     }
 }

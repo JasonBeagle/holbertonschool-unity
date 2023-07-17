@@ -10,13 +10,13 @@ public class TimerTrigger : MonoBehaviour
         timer = GameObject.FindWithTag("Player").GetComponent<Timer>();
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            Debug.Log("Player entered the TimerTrigger");
-        }
-    }
+    // void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.gameObject.tag == "Player")
+    //     {
+    //         Debug.Log("Player entered the TimerTrigger");
+    //     }
+    // }
     
     void OnTriggerExit(Collider other)
     {
