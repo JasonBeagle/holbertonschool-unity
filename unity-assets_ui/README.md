@@ -1,15 +1,18 @@
-# Unity - Assets: Models, Texture
+# Unity - Assets: UI
 
 ## Learning Objectives
 
-    An in-depth understanding of Assets in game development and how to import Assets into Unity
-    Advanced comprehension of common Asset types and Unity primitives for prototyping
-    Understanding the principles of singletons and event systems in game development
-    Proficiency in creating prefabs, and utilizing materials and textures
-    Familiarity with skyboxes, and the components and creation of 3D models
-    Understanding the concept of a mesh and creation of UI elements with image components
-    Understanding the functionality, benefits, and drawbacks of Rigidbody and Character Controller
-    Advanced knowledge of Quaternion and Euler Angles
+    How to import images to use in a user interface
+    What is a canvas?
+    What is the difference between Screenspace, Worldspace, and Localspace?
+    What is a Sprite?
+    How is a Sprite different from a Texture?
+    How to use the Sprite Editor
+    What is 9-slicing?
+    How to create a Slider
+    How to create a Toggle
+    How to swap button images
+    How to use PlayerPrefs and what are they used for?
 
 [Skyboxes: Farland Skies - Cloudy Crown](https://assetstore.unity.com/packages/2d/textures-materials/sky/farland-skies-cloudy-crown-60004)
 [Models: Kenney's Nature Pack Extended](https://www.kenney.nl/assets/nature-kit)
