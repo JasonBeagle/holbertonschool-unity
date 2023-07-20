@@ -627,7 +627,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Next
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92a24eefc404f9d46b942a817d17e018, type: 2}
   m_sharedMaterial: {fileID: -8447841185213755240, guid: 92a24eefc404f9d46b942a817d17e018, type: 2}
@@ -989,9 +989,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Menu
-
-'
+  m_text: Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92a24eefc404f9d46b942a817d17e018, type: 2}
   m_sharedMaterial: {fileID: -8447841185213755240, guid: 92a24eefc404f9d46b942a817d17e018, type: 2}
