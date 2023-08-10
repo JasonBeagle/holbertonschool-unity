@@ -14,11 +14,16 @@ public class PlayerController : MonoBehaviour
     private Vector3 startPosition;
 
     private float verticalVelocity = 0.0f;
+    private float distanceToGround;
+    private Animator animator;
+    private Vector3 initialChildPosition;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         startPosition = transform.position;
+        animator = GetComponentInChildren<Animator>();
+        initialChildPosition = transform.GetChild(0).localPosition;
     }
 
     void Update()
@@ -57,6 +62,7 @@ public class PlayerController : MonoBehaviour
         {
             verticalVelocity = Mathf.Sqrt(2.0f * jumpForce * Mathf.Abs(Physics.gravity.y));
             isJumping = true;
+            animator.SetBool("IsJumping", true);
         }
 
         verticalVelocity += Physics.gravity.y * Time.deltaTime;
@@ -68,6 +74,33 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
             verticalVelocity = 0.0f;
+            animator.SetBool("IsJumping", false);
+            transform.GetChild(0).localPosition = initialChildPosition;
         }
+        
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        bool isRunning = horizontalInput != 0f || verticalInput != 0f;
+        animator.SetBool("IsRunning", isRunning);
+    
+        bool isFalling = !isJumping && !characterController.isGrounded && verticalVelocity < 0;
+        animator.SetBool("IsFalling", isFalling);
+
+        bool isGrounded = IsPlayerGrounded();
+        animator.SetBool("IsGrounded", isGrounded);
+        Debug.Log("Is Grounded: " + isGrounded);
+    
+        if (characterController.isGrounded && Vector3.Distance(transform.position, startPosition) < 0.1f)
+        {
+            animator.SetBool("HasLanded", true); // or animator.SetBool("HasLanded", true);
+        }
+    }
+
+    bool IsPlayerGrounded()
+    {
+        float extraHeightText = 0.1f;
+        bool hitGround = Physics.Raycast(characterController.bounds.center, Vector3.down, characterController.bounds.extents.y + extraHeightText);
+        return hitGround;
     }
 }
