@@ -4226,7 +4226,7 @@ GameObject:
   - component: {fileID: 1457457799}
   - component: {fileID: 1457457798}
   - component: {fileID: 1457457797}
-  - component: {fileID: 1457457796}
+  - component: {fileID: 1457457801}
   m_Layer: 0
   m_Name: CutsceneCamera
   m_TagString: Untagged
@@ -4234,21 +4234,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1457457796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1457457795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aeee6a8d75d78c48bded3af5dd3c43b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 134716770}
-  player: {fileID: 1918830231}
-  timerCanvas: {fileID: 316772284}
 --- !u!95 &1457457797
 Animator:
   serializedVersion: 5
@@ -4259,7 +4244,7 @@ Animator:
   m_GameObject: {fileID: 1457457795}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3e815c948b58aea47ba965effa30384b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 324bcd1de7ce45649a3a6d805eb3dc60, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4336,6 +4321,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1457457801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457457795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aeee6a8d75d78c48bded3af5dd3c43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 134716770}
+  player: {fileID: 1918830231}
+  timerCanvas: {fileID: 316772284}
 --- !u!1001 &1560292765
 PrefabInstance:
   m_ObjectHideFlags: 0
