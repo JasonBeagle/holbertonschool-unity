@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Grass
+  - Stone
+  - Timer
   layers:
   - Default
   - TransparentFX

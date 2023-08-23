@@ -8,9 +8,10 @@ public class WinTrigger : MonoBehaviour
     public int winTextSize = 60;
     public Color winTextColor = Color.green;
     public float delayBeforeReset = 5f; // delay in seconds
-
+    public AudioSource backgroundMusic;
     // Declare a public GameObject for the WinCanvas
     public GameObject winCanvas;
+    public AudioSource winMusic;
 
     void Start()
     {
@@ -45,6 +46,17 @@ public class WinTrigger : MonoBehaviour
 
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None; 
+        }
+
+        if (other.CompareTag("Player"))
+        {
+            backgroundMusic.Stop();
+        }
+
+        if (other.CompareTag("Player")) // Assuming your player has a tag "Player"
+        {
+            backgroundMusic.Stop();
+            winMusic.Play();
         }
     }
 

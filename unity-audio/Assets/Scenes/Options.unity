@@ -624,7 +624,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1060693553}
+        m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
+        m_MethodName: SetSFXVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &328826504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,6 +1610,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 478e8cc8c1aa8af439c46f436cca65c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmMixer: {fileID: 24100000, guid: 6b3a51d1fcec9c445b1c068d718f5643, type: 2}
+  defaultSnapshot: {fileID: 24500006, guid: 6b3a51d1fcec9c445b1c068d718f5643, type: 2}
+  bgmSlider: {fileID: 24332550}
+  sfxSlider: {fileID: 307325401}
 --- !u!1 &1066473369
 GameObject:
   m_ObjectHideFlags: 0
